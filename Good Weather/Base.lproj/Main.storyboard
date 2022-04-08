@@ -11,19 +11,44 @@
         <!--Good Weather-->
         <scene sceneID="3dp-as-Hh1">
             <objects>
-                <tableViewController id="fIK-Yn-Ifm" sceneMemberID="viewController">
+                <tableViewController id="fIK-Yn-Ifm" customClass="WeatherListTableViewController" customModule="Good_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pLS-9t-UZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3Oq-St-5jn">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="3Oq-St-5jn" customClass="WeatherCell" customModule="Good_Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Oq-St-5jn" id="GLw-lP-yC6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-D9-vR2">
+                                            <rect key="frame" x="330" y="38" width="52" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgm-Mu-sa0">
+                                            <rect key="frame" x="34" y="38" width="56" height="27"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Dgm-Mu-sa0" firstAttribute="leading" secondItem="GLw-lP-yC6" secondAttribute="leading" constant="34" id="BZz-dU-Evw"/>
+                                        <constraint firstAttribute="trailing" secondItem="uTQ-D9-vR2" secondAttribute="trailing" constant="32" id="Yza-mt-Nf6"/>
+                                        <constraint firstItem="Dgm-Mu-sa0" firstAttribute="top" secondItem="GLw-lP-yC6" secondAttribute="top" constant="38" id="Zg5-YY-jcs"/>
+                                        <constraint firstItem="uTQ-D9-vR2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dgm-Mu-sa0" secondAttribute="trailing" constant="8" symbolic="YES" id="pLd-jC-gPQ"/>
+                                        <constraint firstItem="uTQ-D9-vR2" firstAttribute="top" secondItem="GLw-lP-yC6" secondAttribute="top" constant="38" id="pZk-gB-OM2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="Dgm-Mu-sa0" id="A5M-H9-YD9"/>
+                                    <outlet property="temperatureLabel" destination="uTQ-D9-vR2" id="ZPr-Lm-Yxg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +72,7 @@
         <!--Add City-->
         <scene sceneID="9jC-Cf-RpL">
             <objects>
-                <viewController id="mLv-lo-6VW" sceneMemberID="viewController">
+                <viewController id="mLv-lo-6VW" customClass="AddWeatherCityViewController" customModule="Good_Weather" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="df6-Um-ksv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
