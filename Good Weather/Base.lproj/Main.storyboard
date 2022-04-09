@@ -72,18 +72,52 @@
         <!--Add City-->
         <scene sceneID="9jC-Cf-RpL">
             <objects>
-                <viewController id="mLv-lo-6VW" customClass="AddWeatherCityViewController" customModule="Good_Weather" sceneMemberID="viewController">
+                <viewController id="mLv-lo-6VW" customClass="AddWeatherCityViewController" customModule="Good_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="df6-Um-ksv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-0s-0C7">
+                                <rect key="frame" x="35" y="75" width="345" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-CC-Yd5">
+                                <rect key="frame" x="180" y="137" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveCityButtonPressed" destination="mLv-lo-6VW" eventType="touchUpInside" id="g5e-qc-c18"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qko-gD-jAY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qko-gD-jAY" firstAttribute="bottom" secondItem="Ieg-CC-Yd5" secondAttribute="bottom" constant="674" id="77e-wa-sPw"/>
+                            <constraint firstItem="Q3y-0s-0C7" firstAttribute="top" secondItem="qko-gD-jAY" secondAttribute="top" constant="19" id="9XP-gy-C10"/>
+                            <constraint firstItem="qko-gD-jAY" firstAttribute="trailing" secondItem="Ieg-CC-Yd5" secondAttribute="trailing" constant="178" id="O7E-GK-TbQ"/>
+                            <constraint firstItem="Ieg-CC-Yd5" firstAttribute="top" secondItem="Q3y-0s-0C7" secondAttribute="bottom" constant="28" id="Sx3-8x-4pv"/>
+                            <constraint firstItem="Q3y-0s-0C7" firstAttribute="leading" secondItem="qko-gD-jAY" secondAttribute="leading" constant="35" id="YPX-0p-ZrW"/>
+                            <constraint firstItem="Ieg-CC-Yd5" firstAttribute="leading" secondItem="qko-gD-jAY" secondAttribute="leading" constant="180" id="YdH-fX-f9Z"/>
+                            <constraint firstItem="Ieg-CC-Yd5" firstAttribute="top" secondItem="Q3y-0s-0C7" secondAttribute="bottom" constant="28" id="kHH-Zn-Oj4"/>
+                            <constraint firstItem="qko-gD-jAY" firstAttribute="trailing" secondItem="Q3y-0s-0C7" secondAttribute="trailing" constant="34" id="yqM-YF-K5h"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="eOI-uS-9gP"/>
+                    <navigationItem key="navigationItem" title="Add City" id="eOI-uS-9gP">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="KAU-Nf-7Uc">
+                            <connections>
+                                <action selector="close:" destination="mLv-lo-6VW" id="NT2-H9-qV8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="Q3y-0s-0C7" id="9T7-UP-wWJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLe-s4-QEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="29"/>
+            <point key="canvasLocation" x="2576.811594202899" y="28.794642857142854"/>
         </scene>
         <!--Good Weather-->
         <scene sceneID="YwJ-FZ-t1r">
